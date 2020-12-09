@@ -1,0 +1,51 @@
+@import "~normalize.css/normalize.css";
+@import "~antd/dist/antd.css";
+@import "./components/all";
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+.container{
+    width: 90%;
+    margin:0 auto;
+}
+
+.main-page{
+    width: 100%;
+    max-width: 1000px;
+    height: 650px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:1px solid rgba(0,0,0,.1);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.19);
+    padding:15px;
+    margin:0 auto;
+
+    &__title{
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}
+
+.page-actions{
+    display:flex;
+    justify-content: space-between;
+    margin-top:20px;
+
+    .users-search{
+        flex:0 0 60%;
+    }
+}
+
+.table{
+    margin-top: 40px;
+}
