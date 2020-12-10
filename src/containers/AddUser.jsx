@@ -1,9 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { AddUser as AddUserBase } from '../components';
 import { openNotification } from '../helpers';
+import { useSelector } from 'react-redux';
+import { getAddUserSuccess } from '../redux/selectors/User';
+
 
 const AddUser = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const addUserSuccess = useSelector((state) => getAddUserSuccess(state));
+
     const formRef = useRef(null);
 
     const showModal = () => {
@@ -12,9 +17,15 @@ const AddUser = () => {
 
     const handleOk = (e) => {
         formRef.current.submit();
-        setIsModalVisible(false);
-        openNotification("Добавление пользователя", "Пользователь успешно добавлен", "success");
     };
+
+
+    useEffect(() => {
+        if (addUserSuccess) {
+            setIsModalVisible(false);
+            openNotification("Добавление пользователя", "Пользователь успешно добавлен", "success");
+        }
+    }, [addUserSuccess]);
 
     return <AddUserBase
         isModalVisible={isModalVisible}

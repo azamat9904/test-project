@@ -3,7 +3,8 @@ import { actionTypes } from '../actions/User';
 import { produce } from 'immer';
 
 const initialState = {
-    users: []
+    users: [],
+    addUserSuccess: false
 };
 
 const User = produce((draft, action) => {
@@ -13,10 +14,13 @@ const User = produce((draft, action) => {
             break;
         case actionTypes.ADD_USER:
             draft.users.push(action.payload);
+            draft.addUserSuccess = true;
             break;
         case actionTypes.DELETE_USER:
             draft.users.splice(action.payload, 1);
             break;
+        case actionTypes.ADD_USER_STARTED:
+            draft.addUserSuccess = false;
         default:
             break;
     }

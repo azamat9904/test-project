@@ -9,7 +9,8 @@ const getLocalStorageUsers = () => {
 export const actionTypes = {
     SET_USERS: "SET_USERS",
     ADD_USER: "ADD_USER",
-    DELETE_USER: "DELETE_USER"
+    DELETE_USER: "DELETE_USER",
+    ADD_USER_STARTED: "ADD_USER_STARTED"
 };
 
 export const setUsers = (users) => ({
@@ -31,6 +32,10 @@ export const initUsers = () => {
     const users = getLocalStorageUsers();
     return setUsers(users);
 }
+
+export const addUserStarted = () => ({
+    type: actionTypes.ADD_USER_STARTED
+});
 
 export const addUserHandler = (user) => {
     const users = getLocalStorageUsers();

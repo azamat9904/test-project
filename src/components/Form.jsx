@@ -12,8 +12,6 @@ const FormBase = ({
     touched,
     errors,
     handleBlur,
-    isValid,
-    dirty,
     selectedStatus,
     setSelectedStatus
 }) => {
