@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { UserSearch as UserSearchBase } from '../components';
 import { setInputText } from '../redux/actions/Filter';
@@ -8,13 +9,19 @@ const UserSearch = () => {
 
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (!inputValue.trim())
+            dispatch(setInputText(""));
+
+    }, [inputValue]);
+
     const onInputValueChange = (e) => {
         setInputValue(e.target.value);
     };
 
-    const onSearch = () => {
+    const onSearch = useCallback(() => {
         dispatch(setInputText(inputValue));
-    };
+    }, [inputValue]);
 
     return <UserSearchBase
         inputValue={inputValue}

@@ -11,13 +11,13 @@
 }
 
 .container{
-    width: 90%;
+    width: 95%;
     margin:0 auto;
 }
 
 .main-page{
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     height: 650px;
     position: absolute;
     top:50%;
@@ -34,18 +34,18 @@
         text-transform: capitalize;
         font-weight: 600;
     }
-}
 
-.page-actions{
-    display:flex;
-    justify-content: space-between;
-    margin-top:20px;
-
-    .users-search{
-        flex:0 0 60%;
+    .page-actions{
+        display:flex;
+        justify-content: space-between;
+        margin-top:35px;
+    
+        .users-search{
+            flex:0 0 60%;
+        }
     }
-}
 
-.table{
-    margin-top: 40px;
+    .table{
+        margin-top: 40px;
+    }
 }

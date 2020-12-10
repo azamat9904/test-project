@@ -3,10 +3,10 @@ import { produce } from 'immer';
 
 const initialState = {
     filterBy: {
-        name: 'Клиент',
-        type: 'Client'
+        name: 'Все',
+        type: 'all'
     },
-    inputSearch: null
+    inputSearch: ""
 };
 
 const Filter = produce((draft, action) => {
@@ -15,7 +15,8 @@ const Filter = produce((draft, action) => {
             draft.filterBy = action.payload;
             break;
         case actionTypes.SET_INPUT_TEXT:
-            draft.inputText = action.payload;
+            draft.inputSearch = action.payload;
+            break;
         default:
             break;
     }

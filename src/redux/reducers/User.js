@@ -1,3 +1,4 @@
+import { actionTypes } from '../actions/User';
 
 import { produce } from 'immer';
 
@@ -7,6 +8,9 @@ const initialState = {
 
 const User = produce((draft, action) => {
     switch (action.type) {
+        case actionTypes.SET_USERS:
+            draft.users = action.payload;
+            break;
         default:
             break;
     }

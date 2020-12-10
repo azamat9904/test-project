@@ -1,0 +1,24 @@
+.user-actions{
+    display: flex;
+
+    &__edit{
+        margin-right: 10px;
+        cursor: pointer;
+        color:blue;
+
+        &:hover{
+            color:lighten(blue, 20%);
+        }
+    }
+
+    &__delete{
+        cursor: pointer;
+        color:red;
+        transition: .3s;
+        
+        &:hover{
+            color:lighten(red, 20%);
+        }
+        
+    }
+}

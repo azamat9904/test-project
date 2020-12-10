@@ -8,7 +8,7 @@ export const setUsers = (users) => ({
 });
 
 export const initUsers = () => {
-    const users = localStorage.getItem('users');
+    let users = localStorage.getItem('users');
     if (users) {
         users = JSON.parse(users);
         return setUsers(users);

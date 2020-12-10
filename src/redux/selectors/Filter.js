@@ -1,7 +1,2 @@
-export const getFilterBy = (state) => {
-    return state.filterState.filterBy
-};
-
-export const getInputSearch = (state) => {
-    return state.filterState.inputSearch;
-}
+export const getFilterBy = (state) => state.filterState.filterBy;
+export const getInputSearch = (state) => state.filterState.inputSearch;

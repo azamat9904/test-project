@@ -6,6 +6,10 @@ import { getFilterBy } from '../redux/selectors/Filter';
 
 const statuses = [
     {
+        name: 'Все',
+        type: 'all'
+    },
+    {
         name: 'Клиент',
         type: 'Client'
     },
