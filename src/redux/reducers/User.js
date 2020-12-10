@@ -4,7 +4,8 @@ import { produce } from 'immer';
 
 const initialState = {
     users: [],
-    addUserSuccess: false
+    addUserSuccess: false,
+    editUserSuccess: false
 };
 
 const User = produce((draft, action) => {
@@ -21,6 +22,14 @@ const User = produce((draft, action) => {
             break;
         case actionTypes.ADD_USER_STARTED:
             draft.addUserSuccess = false;
+            break;
+        case actionTypes.EDIT_USER_STARTED:
+            draft.editUserSuccess = false;
+            break;
+        case actionTypes.EDIT_USER:
+            draft.users.splice(action.payload.neeededUserIndex, 1, action.payload.user);
+            draft.editUserSuccess = true;
+            break;
         default:
             break;
     }

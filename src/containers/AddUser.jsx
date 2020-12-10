@@ -10,6 +10,7 @@ const initialValues = {
     password: '',
     repeatPassword: '',
     phone: '',
+    isCreation: true
 };
 
 const AddUser = () => {

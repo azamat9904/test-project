@@ -4,6 +4,7 @@ import { filterByInput, filterByStatus } from '../../helpers';
 
 export const getUsers = (state) => state.userState.users;
 export const getAddUserSuccess = (state) => state.userState.addUserSuccess;
+export const getEditUserSuccess = (state) => state.userState.editUserSuccess;
 
 export const getFilteredUsers = createSelector([getFilterBy, getInputSearch, getUsers],
     (filterBy, inputSearch, users) => {

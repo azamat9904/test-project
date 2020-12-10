@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { generateId } from '../helpers';
-import { addUserHandler, addUserStarted } from '../redux/actions/User';
+import { addUserHandler, addUserStarted, editUserStarted, editUserHandler } from '../redux/actions/User';
 import { Form as FormBase } from '../components';
 import { getStatuses } from '../helpers/statuses';
 
@@ -17,18 +17,32 @@ const Form = ({
     const formik = useFormik({
         initialValues: initialValues,
         onSubmit: (values, { resetForm }) => {
+            const isCreation = values.isCreation;
+            const id = isCreation ? generateId() : values.key;
+            const created_at = isCreation ? new Date().toString() : values.created_at;
+            const status = isCreation ? selectedStatus : values.status;
+            
             const user = {
-                key: generateId(),
+                key: id,
                 email: values.email,
                 fullname: values.fullname,
                 password: values.password,
                 phone: values.phone,
-                status: selectedStatus,
-                created_at: new Date().toString(),
+                status: status,
+                created_at: created_at,
                 updated_at: new Date().toString()
             }
-            dispatch(addUserStarted());
-            dispatch(addUserHandler(user));
+
+            if (isCreation) {
+                dispatch(addUserStarted());
+                dispatch(addUserHandler(user));
+            }
+
+            if (!isCreation) {
+                dispatch(editUserStarted());
+                dispatch(editUserHandler(user));
+            }
+
             resetForm({});
         },
         validate: (values) => {

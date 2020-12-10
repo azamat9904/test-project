@@ -26,6 +26,7 @@ const FormBase = ({
                 password: values.password,
                 repeatPassword: values.repeatPassword,
                 fullname: values.fullname,
+                phone: values.phone
             }}
         >
             <Form.Item

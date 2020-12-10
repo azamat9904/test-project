@@ -26,7 +26,7 @@ const Modal = ({
             onOk={handleOk}
             onCancel={handleCancel}
             okText={modalCreation ? 'Создать пользователя' : 'Редактировать пользователя'}
-
+            cancelText={"Отменить"}
         >
             {children}
         </ModalBase>
