@@ -14,7 +14,6 @@ const Table = ({
     chosenUser,
     isModalVisible,
     setIsModalVisible,
-    showModal,
     formRef
 }) => {
     return (

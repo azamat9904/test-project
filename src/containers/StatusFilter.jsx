@@ -22,7 +22,7 @@ const StatusFilter = () => {
     const onSetFilterBy = useCallback((filterBy) => {
         dispatch(setFilterBy(filterBy));
         setVisable(false);
-    }, [filterBy]);
+    }, [dispatch]);
 
     const filterOutsideClickListener = useCallback((e) => {
         if (!e.path.includes(filterRef.current)) {

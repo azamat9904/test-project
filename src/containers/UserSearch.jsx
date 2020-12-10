@@ -13,7 +13,7 @@ const UserSearch = () => {
         if (!inputValue.trim())
             dispatch(setInputText(""));
 
-    }, [inputValue]);
+    }, [inputValue, dispatch]);
 
     const onInputValueChange = (e) => {
         setInputValue(e.target.value);
@@ -21,7 +21,7 @@ const UserSearch = () => {
 
     const onSearch = useCallback(() => {
         dispatch(setInputText(inputValue));
-    }, [inputValue]);
+    }, [inputValue, dispatch]);
 
     return <UserSearchBase
         inputValue={inputValue}

@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     dispatch(initUsers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
