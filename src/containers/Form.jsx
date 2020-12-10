@@ -6,16 +6,9 @@ import { addUserHandler, addUserStarted } from '../redux/actions/User';
 import { Form as FormBase } from '../components';
 import { getStatuses } from '../helpers/statuses';
 
-const initialValues = {
-    email: '',
-    fullname: '',
-    password: '',
-    repeatPassword: '',
-    phone: '',
-};
-
 const Form = ({
-    formRef
+    formRef,
+    initialValues
 }) => {
 
     const [selectedStatus, setSelectedStatus] = useState(getStatuses()[0].type);

@@ -7,12 +7,16 @@ const Modal = ({
     isModalVisible,
     setIsModalVisible,
     modalCreation,
-    handleOk
+    formRef
 }) => {
 
 
     const handleCancel = () => {
         setIsModalVisible(false);
+    };
+
+    const handleOk = () => {
+        formRef.current.submit();
     };
 
     return (
@@ -22,7 +26,7 @@ const Modal = ({
             onOk={handleOk}
             onCancel={handleCancel}
             okText={modalCreation ? 'Создать пользователя' : 'Редактировать пользователя'}
-            
+
         >
             {children}
         </ModalBase>

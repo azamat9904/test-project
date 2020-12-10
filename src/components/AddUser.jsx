@@ -7,8 +7,8 @@ const AddUser = ({
     isModalVisible,
     setIsModalVisible,
     showModal,
-    handleOk,
-    formRef
+    formRef,
+    initialValues
 }) => {
     return <div className="add-user">
         <div className="add-user__btn">
@@ -20,9 +20,9 @@ const AddUser = ({
                     isModalVisible={isModalVisible}
                     setIsModalVisible={setIsModalVisible}
                     title={"Добавление пользователя"}
-                    handleOk={handleOk}
+                    formRef={formRef}
                     modalCreation
-                ><Form formRef={formRef} /></Modal>
+                ><Form formRef={formRef} initialValues={initialValues} /></Modal>
             }
         </div>
     </div>

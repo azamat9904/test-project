@@ -4,21 +4,22 @@ import { openNotification } from '../helpers';
 import { useSelector } from 'react-redux';
 import { getAddUserSuccess } from '../redux/selectors/User';
 
+const initialValues = {
+    email: '',
+    fullname: '',
+    password: '',
+    repeatPassword: '',
+    phone: '',
+};
 
 const AddUser = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const addUserSuccess = useSelector((state) => getAddUserSuccess(state));
-
     const formRef = useRef(null);
+    const addUserSuccess = useSelector((state) => getAddUserSuccess(state));
 
     const showModal = () => {
         setIsModalVisible(true);
     };
-
-    const handleOk = (e) => {
-        formRef.current.submit();
-    };
-
 
     useEffect(() => {
         if (addUserSuccess) {
@@ -31,8 +32,8 @@ const AddUser = () => {
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         showModal={showModal}
-        handleOk={handleOk}
         formRef={formRef}
+        initialValues={initialValues}
     />
 };
 
