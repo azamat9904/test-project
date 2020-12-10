@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, Input, Select } from 'antd';
 import { validateField } from '../helpers';
 
-
 const FormBase = ({
     getStatuses,
     values,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table as TableBase, Tag } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+
 import { getReadableDate } from '../helpers';
 import { EditUser as EditUserBase } from '../components';
 
