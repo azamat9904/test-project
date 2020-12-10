@@ -11,6 +11,12 @@ const User = produce((draft, action) => {
         case actionTypes.SET_USERS:
             draft.users = action.payload;
             break;
+        case actionTypes.ADD_USER:
+            draft.users.push(action.payload);
+            break;
+        case actionTypes.DELETE_USER:
+            draft.users.splice(action.payload, 1);
+            break;
         default:
             break;
     }

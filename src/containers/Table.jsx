@@ -1,25 +1,30 @@
 import { Table as TableBase } from '../components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getFilteredUsers } from '../redux/selectors/User';
+import { getColor } from '../helpers';
+import { deleteUserHandler } from '../redux/actions/User';
+import { openNotification } from '../helpers';
 
 const Table = () => {
 
     const users = useSelector((state) => getFilteredUsers(state));
+    const dispatch = useDispatch();
 
-    const getColor = (status) => {
-        let color = 'blue';
-        if (status === 'Partner')
-            color = 'geekblue';
+    const onRemoveItem = (id) => {
+        if (window.confirm("Вы уверены что хотите удалить ?")) {
+            dispatch(deleteUserHandler(id));
+            openNotification("Удаление пользователя", "Пользователь успешно удален", "success");
+        }
+    };
 
-        if (status === 'Admin')
-            color = 'green';
+    const onEditItem = (id) => {
 
-        return color;
     }
 
     return <TableBase
         data={users}
         getColor={getColor}
+        onRemoveItem={onRemoveItem}
     />
 }
 

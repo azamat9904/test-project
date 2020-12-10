@@ -8,7 +8,7 @@ const UserSearch = ({
 }) => {
     return <div className="users-search">
         <Input.Search
-            placeholder="input search text"
+            placeholder="Поиск по почте или номеру"
             allowClear
             value={inputValue}
             onChange={setInputValue}

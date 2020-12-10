@@ -2,8 +2,6 @@ import React from 'react';
 import { Divider } from 'antd';
 import { MainContainer } from '../hoc';
 import { StatusFilter, UserSearch, Table, AddUser } from '../containers';
-
-
 import usersSvg from '../assets/img/group.svg';
 
 const Home = () => {

@@ -1,11 +1,9 @@
 import { actionTypes } from '../actions/Filter';
 import { produce } from 'immer';
+import { statuses } from '../../helpers';
 
 const initialState = {
-    filterBy: {
-        name: 'Все',
-        type: 'all'
-    },
+    filterBy: statuses[0],
     inputSearch: ""
 };
 

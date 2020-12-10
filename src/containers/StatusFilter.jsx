@@ -3,25 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { StatusFilter as StatusFilterBase } from '../components';
 import { setFilterBy } from '../redux/actions/Filter';
 import { getFilterBy } from '../redux/selectors/Filter';
-
-const statuses = [
-    {
-        name: 'Все',
-        type: 'all'
-    },
-    {
-        name: 'Клиент',
-        type: 'Client'
-    },
-    {
-        name: 'Партнер',
-        type: 'Partner'
-    },
-    {
-        name: 'Админ',
-        type: 'Admin'
-    }
-];
+import { statuses } from '../helpers';
 
 const StatusFilter = () => {
 

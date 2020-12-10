@@ -2,15 +2,14 @@ import React from 'react';
 import { Modal as ModalBase } from 'antd';
 
 const Modal = ({
+    title,
     children,
     isModalVisible,
     setIsModalVisible,
-    createdModal
+    modalCreation,
+    handleOk
 }) => {
 
-    const handleOk = () => {
-        setIsModalVisible(false);
-    };
 
     const handleCancel = () => {
         setIsModalVisible(false);
@@ -18,11 +17,11 @@ const Modal = ({
 
     return (
         <ModalBase
-            title="Basic Modal"
+            title={title}
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
-            okText={createdModal ? 'Создать пользователя' : 'Редактировать пользователя'}
+            okText={modalCreation ? 'Создать пользователя' : 'Редактировать пользователя'}
         >
             {children}
         </ModalBase>
